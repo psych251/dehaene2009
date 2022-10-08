@@ -1,0 +1,111 @@
+---
+title: "Replication of 'Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area (2009, NeuroImage)"
+author: "Cherrysse Ulsa (mulsa@stanford.edu)"
+date: "October 8, 2022"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+---
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
+## Introduction
+
+Mirror invariance, a visual mechanism that allows recognition of mirror images, is often present when children are learning to read and write. Dehaene et al. (2009) examined if mirror invariance was retained in adult readers, revealing that mirror invariance is only retained in recognition of images and not words.
+
+This study will replicate Dehaene (2009)'s study. More information can be found in the following links:
+
+[Original paper](https://github.com/psych251/dehaene2009.git/)
+
+[Project Repository](https://github.com/psych251/dehaene2009/blob/f4b45d0253dfb33e33c2da31910f1ba1ca11c2b5/original_paper/dehaene2009.pdf/)
+
+### Justification of the Study
+
+I chose this study because it relates to visual word processing, a research interest of mine. I am particularly interested in how mirror invariance is mostly present in children and not adults and how that can inform development of word processing. Additionally, with my interest in bilingualism/multilingualism, I am interested in how native non-English speakers process words in their native languages. Finally, I am intrigued about how such language differences can inform acquisition of new words especially of a different language. 
+
+### Procedure and Challenges
+
+I plan to replicate the first part of the study which is the behavioral task conducted to examine mirror invariance. I will create the task based on the authors' tasks as provided in the methods section of the paper. The task is comprise of identifying same or different words and pictures based on the participant's native language. I will not be conducting the rest of the study as they require acquisition of fMRI data which is not possible with the time and resouces provided for this project.
+
+The study examined French and Japanese-speaking participants which can be difficult to recruit due to the lack of speakers in the area. Since the authors did not examine specific French and Japanese language variables, I plan to instead recruit English and Spanish speakers for the study due to the prevalence of speakers in the area. Additionally, selecting the words and images for the study can be a challenge as certain word or image can have associations with an individual which can influence identification of same images.
+
+## Methods
+
+### Power Analysis
+
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+
+### Planned Sample
+
+Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+
+### Materials
+
+All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+### Procedure	
+
+Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+### Analysis Plan
+
+Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+
+**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+
+### Differences from Original Study
+
+Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+
+### Methods Addendum (Post Data Collection)
+
+You can comment this section out prior to final report with data collection.
+
+#### Actual Sample
+  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+
+#### Differences from pre-data collection methods plan
+  Any differences from what was described as the original plan, or “none”.
+
+
+## Results
+
+
+### Data preparation
+
+Data preparation following the analysis plan.
+	
+```{r include=F}
+###Data Preparation
+
+####Load Relevant Libraries and Functions
+
+####Import data
+
+#### Data exclusion / filtering
+
+#### Prepare data for analysis - create columns etc.
+```
+
+### Confirmatory analysis
+
+The analyses as specified in the analysis plan.  
+
+*Side-by-side graph with original graph is ideal here*
+
+###Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Replication Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.

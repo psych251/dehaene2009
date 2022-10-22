@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../jspsych.js"></script>
+  <script src="../plugins/jspsych-image-keyboard-response.js"></script>
+  <script src="../plugins/jspsych-html-keyboard-response.js"></script>
+  <link rel="stylesheet" href="../css/jspsych.css"></link>
+  <style>
+    img {
+      width: 300px;
+    }
+  </style>
+</head>
+<body></body>
+<script>
+var face_name_procedure = {
+    timeline: [
+    {
+            type: "image-keyboard-response",
+            stimulus: jsPsych.timelineVariable('pair1'),
+            trial_duration: 200,
+            choices: "NO_KEYS"
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: '+',
+            choices: "NO_KEYS",
+            trial_duration: 300
+        },
+        {
+            type: "image-keyboard-response",
+            stimulus: jsPsych.timelineVariable('pair2'),         
+            choices: "NO_KEYS",
+            trial_duration: 200
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: "Press S if same image, Press D if different image",         
+            choices: ["S", "D"]
+        }
+    ],
+
+    timeline_variables: [
+        { pair1: 'img/tools/tool1.jpg', pair2: 'img/tools/tool1_MS.jpg' },
+        { pair1: 'img/tools/tool1.jpg', pair2: 'img/tools/tool1_NS.jpg' },
+        { pair1: 'img/tools/tool2.jpg', pair2: 'img/tools/tool2_NS.jpg' },
+        { pair1: 'img/tools/tool3.jpg', pair2: 'img/tools/tool3_NS.jpg' },
+        { pair1: 'img/tools/tool4.jpg', pair2: 'img/tools/tool4_NS.jpg' },
+        { pair1: 'img/tools/tool5.jpg', pair2: 'img/tools/tool5_NS.jpg' },
+
+    ],
+    randomize_order: true
+}
+
+  jsPsych.init({
+    timeline: [face_name_procedure],
+    on_finish: function() {
+      jsPsych.data.displayData();
+    }
+  });
+</script>
+
+</html>

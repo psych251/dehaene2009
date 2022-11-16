@@ -3,12 +3,14 @@
 
 <head>
   <script src="../jspsych.js"></script>
+  <script src="../plugins/jspsych-instructions.js"></script>
   <script src="../plugins/jspsych-image-keyboard-response.js"></script>
   <script src="../plugins/jspsych-html-keyboard-response.js"></script>
+  
   <link rel="stylesheet" href="../css/jspsych.css"></link>
   <style>
     img {
-      width: 300px;
+      width: 100px;
     }
   </style>
 </head>
@@ -20,31 +22,122 @@ for (let i=0; i <image_list.length; i++)
 //normal-same
 {
 item = image_list[i]
-timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/tools/"+item+".jpg"}) //tools
-timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/faces/"+item+".jpg"}) //faces
-timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/french/"+item+".jpg"}) //french
-timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/jap/"+item+".jpg"}) //japanese
-timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/false/"+item+".jpg"}) //false words
+timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/tools/"+item+".jpg", answer: 'SO'}) //tools
+timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/faces/"+item+".jpg", answer: 'SH'}) //faces
+timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/french/"+item+".jpg", answer: 'SR'}) //french
+timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/jap/"+item+".jpg", answer: 'SJ'}) //japanese
+timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/false/"+item+".jpg", answer: 'SM'}) //false words
 //normal-different
 const different = image_list.filter(difimage => difimage!=item)
 const random_different = different[Math.floor(Math.random()*different.length)]
-timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/tools/"+random_different+".jpg" }) //tools
-timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/faces/"+random_different+".jpg"}) //faces
-timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/french/"+random_different+".jpg"}) //french
-timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/jap/"+random_different+".jpg"}) //japanese
-timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/false/"+random_different+".jpg"}) //false words
+timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/tools/"+random_different+".jpg", answer: 'DO' }) //tools
+timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/faces/"+random_different+".jpg", answer:'DH'}) //faces
+timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/french/"+random_different+".jpg", answer: 'DR'}) //french
+timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/jap/"+random_different+".jpg", answer: 'DJ'}) //japanese
+timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/false/"+random_different+".jpg", answer: 'DM'}) //false words
 //mirror-same
-timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/Mtools/"+item+".jpg" }) //tools
-timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/Mfaces/"+item+".jpg"}) // faces
-timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/Mfrench/"+item+".jpg"}) //french
-timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/Mjap/"+item+".jpg"}) //japanese
-timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/Mfalse/"+item+".jpg"}) //false words
+timeline_list.push({pair1: "img2/tools/"+item+".jpg", pair2: "img2/Mtools/"+item+".jpg", answer: 'SO' }) //tools
+timeline_list.push({pair1: "img2/faces/"+item+".jpg", pair2: "img2/Mfaces/"+item+".jpg", answer: 'SH'})// faces
+timeline_list.push({pair1: "img2/french/"+item+".jpg", pair2: "img2/Mfrench/"+item+".jpg", answer: 'SR'}) //french
+timeline_list.push({pair1: "img2/jap/"+item+".jpg", pair2: "img2/Mjap/"+item+".jpg", answer: 'SJ'}) //japanese
+timeline_list.push({pair1: "img2/false/"+item+".jpg", pair2: "img2/Mfalse/"+item+".jpg", answer: 'SM'}) //false words
 //mirror-different
-timeline_list.push({pair1: "img2/Mtools/"+item+".jpg", pair2: "img2/Mtools/"+random_different+".jpg" }) //tools
-timeline_list.push({pair1: "img2/Mfaces/"+item+".jpg", pair2: "img2/Mfaces/"+random_different+".jpg"}) // faces
-timeline_list.push({pair1: "img2/Mfrench/"+item+".jpg", pair2: "img2/Mfrench/"+random_different+".jpg"}) // french
-timeline_list.push({pair1: "img2/Mjap/"+item+".jpg", pair2: "img2/Mjap/"+random_different+".jpg"}) // japanese
-timeline_list.push({pair1: "img2/Mfalse/"+item+".jpg", pair2: "img2/Mfalse/"+random_different+".jpg"}) // false words
+timeline_list.push({pair1: "img2/Mtools/"+item+".jpg", pair2: "img2/Mtools/"+random_different+".jpg", answer: 'DO' }) //tools
+timeline_list.push({pair1: "img2/Mfaces/"+item+".jpg", pair2: "img2/Mfaces/"+random_different+".jpg", answer:'DH'}) // faces
+timeline_list.push({pair1: "img2/Mfrench/"+item+".jpg", pair2: "img2/Mfrench/"+random_different+".jpg", answer: 'DR'}) // french
+timeline_list.push({pair1: "img2/Mjap/"+item+".jpg", pair2: "img2/Mjap/"+random_different+".jpg", answer: 'DJ'}) // japanese
+timeline_list.push({pair1: "img2/Mfalse/"+item+".jpg", pair2: "img2/Mfalse/"+random_different+".jpg", answer: 'DM'}) // false words
+}
+
+// var jsPsych = initJsPsych();
+
+// var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+
+// jsPsych.data.addProperties({
+//     subject_id: subject_id
+// });
+
+var instruct = {
+  type: 'instructions',
+  pages: [
+    'Welcome to the experiment. Click next for the instructions.',
+    'You will be presented one image after another. Press S if the first word or image is the same as the second word or image. The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. ',
+    // '<br>'+
+    // '<img src ="img2/1ins.jpg"> </img>',
+    // '<br>'+
+    // '<img src="img2/2ins.jpg"></img>',
+    'Let us try two examples. Click next to begin trial.'
+  ],
+  show_clickable_nav: true
+}
+
+var ex1 = {
+  timeline: [
+    {
+            type: "image-keyboard-response",
+            stimulus: 'img2/tools/2.jpg',
+            trial_duration: 200,
+            choices: "NO_KEYS"
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: '+',
+            choices: "NO_KEYS",
+            trial_duration: 300
+        },
+        {
+            type: "image-keyboard-response",
+            stimulus: 'img2/Mtools/2.jpg',         
+            choices: "NO_KEYS",
+            trial_duration: 200
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: "Press S if you see the same image, Press D if you a different image",         
+            choices: ["S", "D"]
+        }
+  ]
+}
+var correct1 = {
+  type: 'instructions',
+  pages: [
+    'The two images were the same, but in different orientation. Let us try another example. Click next to continue.'
+  ],
+  show_clickable_nav: true
+}
+var ex2 = {
+  timeline: [
+    {
+            type: "image-keyboard-response",
+            stimulus: 'img2/jap/2.jpg',
+            trial_duration: 200,
+            choices: "NO_KEYS"
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: '+',
+            choices: "NO_KEYS",
+            trial_duration: 300
+        },
+        {
+            type: "image-keyboard-response",
+            stimulus: 'img2/jap/3.jpg',         
+            choices: "NO_KEYS",
+            trial_duration: 200
+        },
+        {
+            type: "html-keyboard-response",
+            stimulus: "Press S if you see the same image, Press D if you a different image",         
+            choices: ["S", "D"]
+        }
+  ]
+}
+var correct2 = {
+  type: 'instructions',
+  pages: [
+    'The two words/images were different. Click next to begin the task.'
+  ],
+  show_clickable_nav: true
 }
 
 var face_name_procedure = {
@@ -70,7 +163,9 @@ var face_name_procedure = {
         {
             type: "html-keyboard-response",
             stimulus: "Press S if you see the same image, Press D if you a different image",         
-            choices: ["S", "D"]
+            choices: ["S", "D"],
+            data: jsPsych.timelineVariable('answer')
+
         }
     ],
 
@@ -79,7 +174,7 @@ var face_name_procedure = {
 }
 
   jsPsych.init({
-    timeline: [face_name_procedure],
+    timeline: [instruct, ex1, correct1, ex2, correct2, face_name_procedure],
     on_finish: function() {
       jsPsych.data.displayData('csv');
     }

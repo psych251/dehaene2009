@@ -64,8 +64,8 @@ timeline_list.push({pair1: "img2/Mfalse/"+item+".jpg", pair2: "img2/Mfalse/"+ran
 var instruct = {
   type: jsPsychInstructions,
   pages: [
-    'Welcome to the experiment. Click next for the instructions.',
-    'You will be presented one image after another. Press S if the first word or image is the same as the second word or image. The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. ',
+    'Welcome to the experiment. By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact us at stanfordpsych251@gmail.com. You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you. Click next to continue to the experiment.',
+    'Directions: You will be presented one image after another. Press S if the first word or image is the same as the second word or image. The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. ',
     // '<br>'+
     // '<img src ="img2/1ins.jpg"> </img>',
     // '<br>'+
@@ -97,7 +97,7 @@ var ex1 = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you a different image",         
+            stimulus: "Press S if you see the same image, Press D if you see a different image",         
             choices: ["S", "D"]
         }
   ]
@@ -131,7 +131,7 @@ var ex2 = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you a different image",         
+            stimulus: "Press S if you see the same image, Press D if you see a different image",         
             choices: ["S", "D"]
         }
   ]
@@ -166,7 +166,7 @@ var face_name_procedure = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you a different image",         
+            stimulus: "Press S if you see the same image, Press D if you see a different image",         
             choices: ["S", "D"],
             data: jsPsych.timelineVariable('answer')
 

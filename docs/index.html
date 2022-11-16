@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="jspsych/dist/jspsych.css"></link>
   <style>
     img {
-      width: 300px;
+      width: 50px
     }
   </style>
 </head>
 <body></body>
 <script>
-var jsPsych = initJsPsych();
+var jsPsych = initJsPsych({
+    on_finish: function() {
+      jsPsych.data.displayData('csv');
+    }
+});
 
 var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
 
@@ -58,7 +62,7 @@ timeline_list.push({pair1: "img2/Mfalse/"+item+".jpg", pair2: "img2/Mfalse/"+ran
 }
 
 var instruct = {
-  type: 'instructions',
+  type: jsPsychInstructions,
   pages: [
     'Welcome to the experiment. Click next for the instructions.',
     'You will be presented one image after another. Press S if the first word or image is the same as the second word or image. The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. ',
@@ -74,32 +78,32 @@ var instruct = {
 var ex1 = {
   timeline: [
     {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: 'img2/tools/2.jpg',
             trial_duration: 200,
             choices: "NO_KEYS"
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: '+',
             choices: "NO_KEYS",
             trial_duration: 300
         },
         {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: 'img2/Mtools/2.jpg',         
             choices: "NO_KEYS",
             trial_duration: 200
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: "Press S if you see the same image, Press D if you a different image",         
             choices: ["S", "D"]
         }
   ]
 }
 var correct1 = {
-  type: 'instructions',
+  type: jsPsychInstructions,
   pages: [
     'The two images were the same, but in different orientation. Let us try another example. Click next to continue.'
   ],
@@ -108,32 +112,32 @@ var correct1 = {
 var ex2 = {
   timeline: [
     {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: 'img2/jap/2.jpg',
             trial_duration: 200,
             choices: "NO_KEYS"
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: '+',
             choices: "NO_KEYS",
             trial_duration: 300
         },
         {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: 'img2/jap/3.jpg',         
             choices: "NO_KEYS",
             trial_duration: 200
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: "Press S if you see the same image, Press D if you a different image",         
             choices: ["S", "D"]
         }
   ]
 }
 var correct2 = {
-  type: 'instructions',
+  type: jsPsychInstructions,
   pages: [
     'The two words/images were different. Click next to begin the task.'
   ],
@@ -143,25 +147,25 @@ var correct2 = {
 var face_name_procedure = {
     timeline: [
     {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: jsPsych.timelineVariable('pair1'),
             trial_duration: 200,
             choices: "NO_KEYS"
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: '+',
             choices: "NO_KEYS",
             trial_duration: 300
         },
         {
-            type: "image-keyboard-response",
+            type: jsPsychImageKeyboardResponse,
             stimulus: jsPsych.timelineVariable('pair2'),         
             choices: "NO_KEYS",
             trial_duration: 200
         },
         {
-            type: "html-keyboard-response",
+            type: jsPsychHtmlKeyboardResponse,
             stimulus: "Press S if you see the same image, Press D if you a different image",         
             choices: ["S", "D"],
             data: jsPsych.timelineVariable('answer')
@@ -173,12 +177,7 @@ var face_name_procedure = {
     randomize_order: true
 }
 
-  jsPsych.run({
-    timeline: [instruct, ex1, correct1, ex2, correct2, face_name_procedure],
-    on_finish: function() {
-      jsPsych.data.displayData('csv');
-    }
-  });
+  jsPsych.run([instruct, ex1, correct1, ex2, correct2, face_name_procedure]);
 </script>
 
 </html>

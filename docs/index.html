@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="jspsych/dist/jspsych.css"></link>
   <style>
     img {
-      width: 50px
+      width: 100px
     }
   </style>
 </head>
@@ -65,6 +65,7 @@ var instruct = {
   type: jsPsychInstructions,
   pages: [
     'Welcome to the experiment. By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact us at stanfordpsych251@gmail.com. You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you. Click next to continue to the experiment.',
+    'Before starting the experiment, please ensure that you are performing this task on a laptop or a desktop. In addition, please set your window size to less than 100% by pressing the command/Ctrl and - (minus sign) keys simultaneously or by going on View > Zoom out.',
     'Directions: You will be presented one image after another. Press S if the first word or image is the same as the second word or image. The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. ',
     // '<br>'+
     // '<img src ="img2/1ins.jpg"> </img>',
@@ -97,7 +98,7 @@ var ex1 = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you see a different image",         
+            stimulus: "Press S if the two images were the same, Press D if the two images were different.",         
             choices: ["S", "D"]
         }
   ]
@@ -131,7 +132,7 @@ var ex2 = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you see a different image",         
+            stimulus: "Press S if the two images were the same, Press D if the two images were different.",         
             choices: ["S", "D"]
         }
   ]
@@ -140,6 +141,15 @@ var correct2 = {
   type: jsPsychInstructions,
   pages: [
     'The two words/images were different. Click next to begin the task.'
+  ],
+  show_clickable_nav: true
+}
+var debrief = {
+  type: jsPsychInstructions,
+  pages: [
+    'Great job! You have finished the experiment. Click next to learn about the experiment ',
+    'The goal of the experiment was to replicate a study on mirror invariance which is a visual mechanism that allows recognition of mirror images. The study examines if mirror invariance is retained in adults and if mirror invariance is present for recognizing objects, faces, familiar, and nonfamiliar words.',
+    'Thank you for completing the experiment. Please email for stanfordpsych251@gmail.com any questions or concerns.'
   ],
   show_clickable_nav: true
 }
@@ -166,7 +176,7 @@ var face_name_procedure = {
         },
         {
             type: jsPsychHtmlKeyboardResponse,
-            stimulus: "Press S if you see the same image, Press D if you see a different image",         
+            stimulus: "Press S if the two images were the same, Press D if the two images were different.",         
             choices: ["S", "D"],
             data: jsPsych.timelineVariable('answer')
 
@@ -177,7 +187,7 @@ var face_name_procedure = {
     randomize_order: true
 }
 
-  jsPsych.run([instruct, ex1, correct1, ex2, correct2, face_name_procedure]);
+  jsPsych.run([instruct, ex1, correct1, ex2, correct2, face_name_procedure, debrief]);
 </script>
 
 </html>

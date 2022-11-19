@@ -3,6 +3,7 @@
 
 <head>
   <script src="jspsych/dist/jspsych.js"></script>
+  <script src="jspsych/dist/plugin-preload.js"></script>
   <script src="jspsych/dist/plugin-instructions.js"></script>
   <script src="jspsych/dist/plugin-image-keyboard-response.js"></script>
   <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
@@ -21,6 +22,11 @@ var jsPsych = initJsPsych({
       jsPsych.data.displayData('csv');
     }
 });
+
+var preload = {
+    type: jsPsychPreload,
+    auto_preload: true 
+}
 
 var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
 
@@ -60,6 +66,7 @@ timeline_list.push({pair1: "img2/Mfrench/"+item+".jpg", pair2: "img2/Mfrench/"+r
 timeline_list.push({pair1: "img2/Mjap/"+item+".jpg", pair2: "img2/Mjap/"+random_different+".jpg", answer: 'DJ'}) // japanese
 timeline_list.push({pair1: "img2/Mfalse/"+item+".jpg", pair2: "img2/Mfalse/"+random_different+".jpg", answer: 'DM'}) // false words
 }
+
 
 var instruct = {
   type: jsPsychInstructions,
@@ -187,7 +194,7 @@ var face_name_procedure = {
     randomize_order: true
 }
 
-  jsPsych.run([instruct, ex1, correct1, ex2, correct2, face_name_procedure, debrief]);
+  jsPsych.run([preload, instruct, ex1, correct1, ex2, correct2, face_name_procedure, debrief]);
 </script>
 
 </html>

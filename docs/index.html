@@ -23,9 +23,20 @@ var jsPsych = initJsPsych({
     }
 });
 
+const category_list=["faces", "false", "french", "jap", "Mfaces", "Mfalse", "Mfrench", "Mjap", "Mtools", "tools"]
+const image_list=["1","2","3","4","5","6","7","8","9","10","11","12","13","14"]
+var images = []
+for (let i=0; i<category_list.length; i++)
+{
+  for (let j=1; j<image_list.length; j++)
+  {
+    images.push("img2/"+category_list[i]+"/"+j+".jpg")
+  }
+}
+
 var preload = {
     type: jsPsychPreload,
-    auto_preload: true 
+    images: images
 }
 
 var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -35,7 +46,6 @@ jsPsych.data.addProperties({
 });
 
 var timeline_list = []
-const image_list=["1","2","3","4","5","6","7","8","9","10","11","12","13","14"]
 for (let i=0; i <image_list.length; i++)
 //normal-same
 {

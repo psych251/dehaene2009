@@ -18,8 +18,8 @@
 <body></body>
 <script>
 var jsPsych = initJsPsych({
-    on_finish: function() {
-      jsPsych.data.displayData('csv');
+    on_finish: function(data) {
+      proliferate.submit({"trials": data.values()});
     }
 });
 
@@ -204,7 +204,7 @@ var face_name_procedure = {
     randomize_order: true
 }
 
-  jsPsych.run([preload, subject_id, instruct, ex1, correct1, ex2, correct2, face_name_procedure, debrief]);
+  jsPsych.run([preload, instruct, ex1, correct1, ex2, correct2, face_name_procedure, debrief]);
 </script>
 
 </html>

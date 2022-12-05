@@ -1,0 +1,58 @@
+---
+title: "preprocessing_psych251"
+author: "Cherrysse Ulsa"
+date: "10/28/2022"
+output: html_document
+---
+
+Load multiple csv files
+
+```{r}
+library(tidyr)
+library(dplyr)
+library(data.table)
+library(ggplot2)
+```
+
+open csv
+
+```{r}
+pilot <- read.csv(file = "~/Desktop/output_data.csv")
+#filter out correct answers
+correctanswers <- pilot %>%
+  subset(X0 == "S" & response == "s"|X0 == "D" & response == "d" ) %>%
+  unite('samediff_mirrornorm', X0,same_mirror_normal, remove=FALSE) %>%
+  rename(categories=X1) %>% 
+  rename(samediff=X0) %>%
+  rename(condition=samediff_mirrornorm)
+correctanswers
+
+```
+
+summarize median
+
+```{r}
+median_rt = correctanswers%>% 
+  group_by(categories, samediff, condition,same_mirror_normal,workerid) %>%
+  summarize(medianrt= median(rt, na.rm =FALSE))
+median_rt
+```
+run ANOVA
+
+```{r}
+anova_results <- aov(median_rt$medianrt ~ median_rt$categories)
+summary(anova_results)
+```
+
+make bar graph
+
+```{r}
+SEM <- sd(median_rt$medianrt)/sqrt(length(median_rt$medianrt))
+median_rt %>%
+  group_by(categories,same_mirror_normal) %>%
+  ggplot(aes(x=categories, y=medianrt, fill= condition, bins=10)) + geom_bar(stat = 'identity', position = "dodge")+
+  geom_errorbar(aes(x=categories, ymin=medianrt, ymax=median_rt$medianrt+SEM), width=0.2, position = position_dodge(0.9))+
+  scale_x_discrete(labels=c("H" = "Faces","J" = "Japanese", "M" = "False words", "O" = "Tools", "R"="French"))+
+  scale_fill_discrete(name="condition", labels=c("Mirror Different","Normal Different","Mirror Same","Normal Same"))+
+  labs(y="Response Time(ms)")
+```

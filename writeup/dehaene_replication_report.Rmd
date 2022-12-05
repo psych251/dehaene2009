@@ -24,7 +24,7 @@ This study will replicate Dehaene (2009)'s study. More information can be found 
 
 [Updated Project Paradigm](https://psych251.github.io/dehaene2009/)
 
-[Collected Data](https://github.com/psych251/dehaene2009/blob/main/task/jspsych/jspsych-6.1.0/task/mirrorinvariance1.html)
+[Collected Data](https://github.com/psych251/dehaene2009/tree/main/writeup)
 
 
 ### Justification of the Study
@@ -65,7 +65,7 @@ The following procedure will be followed precisely:
 
 The following analysis plan will be followed:
 
-Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. 
+Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. Data will be collected from 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
 
 In this replication study, I will focus on response time between written scripts compared to pictures (face and objects combined) as shown in the Figure 7 of the study. 
 
@@ -111,13 +111,13 @@ The analyses as specified in the analysis plan will was followed. Median correct
 As stated, median correct response times did not vary accross categories (p=0.941).
 
 ![Original figure from the study](/Users/cherrysseulsa/Desktop/image_proj.png )
-![Figure from pilot data](/Users/cherrysseulsa/Desktop/image_proj.png )
+![Figure from pilot data](/Users/cherrysseulsa/Desktop/pilotimage.png )
 
 ## Discussion
 
 ### Summary of Replication Attempt
 
-In the pilot of two participants, the result was not replicated as median response times did not vary significantly accross categories.
+In the pilot of two French-speaking participants, the result was not replicated as median response times did not vary significantly accross categories. 
 
 ```{r include=F}
 

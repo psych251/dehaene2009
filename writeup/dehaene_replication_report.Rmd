@@ -1,7 +1,7 @@
 ---
 title: "Replication of 'Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area (2009, NeuroImage)"
 author: "Cherrysse Ulsa (mulsa@stanford.edu)"
-date: "October 8, 2022"
+date: "October 20, 2022"
 output:
   html_document:
     toc: yes
@@ -22,15 +22,20 @@ This study will replicate Dehaene (2009)'s study. More information can be found 
 
 [Project Repository](https://github.com/psych251/dehaene2009/blob/f4b45d0253dfb33e33c2da31910f1ba1ca11c2b5/original_paper/dehaene2009.pdf/)
 
+[Updated Project Paradigm](https://psych251.github.io/dehaene2009/)
+
+[Collected Data](https://github.com/psych251/dehaene2009/blob/main/task/jspsych/jspsych-6.1.0/task/mirrorinvariance1.html)
+
+
 ### Justification of the Study
 
 I chose this study because it relates to visual word processing, a research interest of mine. I am particularly interested in how mirror invariance is mostly present in children and not adults and how that can inform development of word processing. Additionally, with my interest in bilingualism/multilingualism, I am interested in how native non-English speakers process words in their native languages. Finally, I am intrigued about how such language differences can inform acquisition of new words especially of a different language. 
 
 ### Procedure and Challenges
 
-I plan to replicate the first part of the study which is the behavioral task conducted to examine mirror invariance. I will create the task based on the authors' tasks as provided in the methods section of the paper. The task is comprise of identifying same or different words and pictures based on the participant's native language. I will not be conducting the rest of the study as they require acquisition of fMRI data which is not possible with the time and resouces provided for this project.
+I plan to replicate the first part of the study which is the behavioral task conducted to examine mirror invariance specifically the "Behavioral same-different judgments: extension to other visual categories" section. I will create the task based on the authors' tasks as provided in the methods section of the paper. The task is comprise of identifying same or different words and pictures based on the participant's native language. I will not be conducting the rest of the study as they require acquisition of fMRI data which is not possible with the time and resouces provided for this project.
 
-The study examined French and Japanese-speaking participants which can be difficult to recruit due to the lack of speakers in the area. Since the authors did not examine specific French and Japanese language variables, I plan to instead recruit English and Spanish speakers for the study due to the prevalence of speakers in the area. Additionally, selecting the words and images for the study can be a challenge as certain word or image can have associations with an individual which can influence identification of same images.
+Selecting the words and images for the study can be a challenge as certain word or image can have associations with an individual which can influence identification of same images.
 
 ## Methods
 
@@ -40,25 +45,33 @@ Original effect size, power analysis for samples to achieve 80%, 90%, 95% power 
 
 ### Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+There will be 26 total participants, 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
 
 ### Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+The following materials will be followed precisely:
+
+"All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. 
+
+Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters)." page 1846.
 
 ### Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+The following procedure will be followed precisely:
+
+"The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant's task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g. two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g. one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order." page 1846.
 
 ### Analysis Plan
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+The following analysis plan will be followed:
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. 
+
+In this replication study, I will focus on response time between written scripts compared to pictures (face and objects combined) as shown in the Figure 7 of the study. 
 
 ### Differences from Original Study
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+This replication study will follow the methods and analysis plan from the study as previously mentioned. Images and words in the original study are different from this replication study. The main difference is that the fMRI part of the study is not conducted; so in contrary to the original study, participants wont have any exposure to same-different task prior to this study.
 
 ### Methods Addendum (Post Data Collection)
 
@@ -68,15 +81,16 @@ You can comment this section out prior to final report with data collection.
   Sample size, demographics, data exclusions based on rules spelled out in analysis plan
 
 #### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
-
+ Data will be collected through prolific instead of an in-lab setting. Additionally, images in the behavioral tasks were different from the previous study.
 
 ## Results
-
+In the pilot study, median correct response times did not vary accross categories (p=0.941).
 
 ### Data preparation
 
-Data preparation following the analysis plan.
+Two sets of data: one for Japanese participants and another for French participants.
+For each group of participants, there will be 20 columns:
+ID and five categories where there will be: Normal Pair Same, Normal Pair Different, Mirror Same,and Mirror Different categories. All columns will be used for the [analysis](https://github.com/psych251/dehaene2009.git/)
 	
 ```{r include=F}
 ###Data Preparation
@@ -92,20 +106,21 @@ Data preparation following the analysis plan.
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+The analyses as specified in the analysis plan will was followed. Median correct response times will be analyzed using ANOVA to test group category effects of mirror invariance.
 
-*Side-by-side graph with original graph is ideal here*
+As stated, median correct response times did not vary accross categories (p=0.941).
 
-###Exploratory analyses
-
-Any follow-up analyses desired (not required).  
+![Original figure from the study](/Users/cherrysseulsa/Desktop/image_proj.png )
+![Figure from pilot data](/Users/cherrysseulsa/Desktop/image_proj.png )
 
 ## Discussion
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+In the pilot of two participants, the result was not replicated as median response times did not vary significantly accross categories.
 
-### Commentary
+```{r include=F}
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+### Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+```
+

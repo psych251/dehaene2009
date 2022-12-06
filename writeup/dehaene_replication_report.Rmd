@@ -39,10 +39,6 @@ Selecting the words and images for the study can be a challenge as certain word 
 
 ## Methods
 
-### Power Analysis
-
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
-
 ### Planned Sample
 
 There will be 26 total participants, 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
@@ -67,7 +63,6 @@ The following analysis plan will be followed:
 
 Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. Data will be collected from 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
 
-In this replication study, I will focus on response time between written scripts compared to pictures (face and objects combined) as shown in the Figure 7 of the study. 
 
 ### Differences from Original Study
 
@@ -81,7 +76,7 @@ You can comment this section out prior to final report with data collection.
   Sample size, demographics, data exclusions based on rules spelled out in analysis plan
 
 #### Differences from pre-data collection methods plan
- Data will be collected through prolific instead of an in-lab setting. Additionally, images in the behavioral tasks were different from the previous study.
+ Data will be collected through prolific instead of lab setting. Additionally, images in the behavioral tasks were different from the previous study.
 
 ## Results
 In the pilot study, median correct response times did not vary accross categories (p=0.941).
@@ -90,7 +85,13 @@ In the pilot study, median correct response times did not vary accross categorie
 
 Two sets of data: one for Japanese participants and another for French participants.
 For each group of participants, there will be 20 columns:
-ID and five categories where there will be: Normal Pair Same, Normal Pair Different, Mirror Same,and Mirror Different categories. All columns will be used for the [analysis](https://github.com/psych251/dehaene2009.git/)
+ID and five categories where there will be: Normal Pair Same, Normal Pair Different, Mirror Same,and Mirror Different categories. 
+
+Data exclusion:
+- Response times less than 100 ms and more than 2000 ms. This is to ensure participants are not pressing keys randomly or are paying attention to the task.
+- Less than 80% accuracy for recognizing same/different images to ensure participants are paying attention to the task.
+
+Further data-cleaning from behavioral task was done prior to analysis. This was to derive mirror or same [Data-cleaning](https://github.com/psych251/dehaene2009.git/)
 	
 ```{r include=F}
 ###Data Preparation
@@ -106,7 +107,7 @@ ID and five categories where there will be: Normal Pair Same, Normal Pair Differ
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan will was followed. Median correct response times will be analyzed using ANOVA to test group category effects of mirror invariance.
+The analyses as specified in the analysis plan will was followed. Median correct response times will be analyzed using ANOVA to test group category effects of mirror invariance. I will focus on the category effect from the ANOVA test. 
 
 As stated, median correct response times did not vary accross categories (p=0.941).
 

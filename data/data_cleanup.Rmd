@@ -1,0 +1,182 @@
+---
+title: "Data Cleanup"
+author: "Cherrysse Ulsa"
+date: "12/4/2022"
+output: html_document
+---
+```{r}
+library(tidyr)
+library(dplyr)
+library(data.table)
+library(ggplot2)
+```
+
+Summary of column names:
+
+
+To clean up the data from the behavioral task, I added another column to indicate if a pair was a mirror or normal pair using stimulus column from the raw data.
+
+```{r}
+
+library(dplyr)
+
+file = "french_mirrorinvariance-merged.csv"
+data = read.csv(file)
+
+
+#CREATE SEQUENCE ID
+list = list("")
+for (x in data$internal_node_id) {
+  split = strsplit(x, split = "-")
+  list <- append(list, split)
+}
+l2 = list("")
+for (x in list) {
+  last_item = tail(x, n=1)
+  l2 <- append(l2, last_item)
+}
+l2 = unlist(l2)
+l3 = list("")
+for (x in l2) {
+  num = as.double(x)
+  num = floor(num)
+  l3 <- append(l3, num)
+}
+l3 = unlist(l3)
+length = length(l3)
+l3 = l3[-1]
+l3 = l3[-1]
+l3 = l3[-1]
+data$sequence_id = l3
+
+#FIGURE OUT IF MIRROR OR NOT
+
+mirror = grepl("M", data$stimulus, ignore.case = FALSE,)
+normal = grepl(pattern = "/jap", data$stimulus) | grepl(pattern = "/french", data$stimulus) | grepl(pattern = "/tools", data$stimulus) | grepl(pattern = "/faces", data$stimulus) | grepl(pattern = "/false", data$stimulus)
+
+test = (data$sequence_id == "0" | data$sequence_id =="2") & (mirror == TRUE)
+test1 = (data$sequence_id == "0" | data$sequence_id =="2") & (normal == TRUE)
+
+mirror_true <- ifelse(test, "M", NA)
+normal_true <- ifelse(test1, "T", NA)
+
+
+length = length(data$sequence_id)
+stimulus_positions = grepl("Press S", data$stimulus, ignore.case = FALSE,)
+stimulus_positions = which(stimulus_positions == 'TRUE')
+
+same_mirror_normal <- rep(NA, length)
+for (stimulus_position in stimulus_positions) {
+  if (mirror[stimulus_position - 1] == TRUE | mirror[stimulus_position - 3] == TRUE) {
+    same_mirror_normal[stimulus_position] = "M"
+  } else {
+    same_mirror_normal[stimulus_position] = "T"
+  }
+}
+data['same_mirror_normal'] <- same_mirror_normal
+
+#MOVE COLUMNS
+
+data = select(data, workerid,proliferate.condition,X0,X1,failed_audio,failed_images,failed_video,internal_node_id,response,rt,sequence_id, same_mirror_normal, stimulus, success, time_elapsed, timeout, trial_index, trial_type, view_history, error)
+
+#EXPORT DATAFRAME AS CSV
+data <- replace(data, is.na(data), "") #REMOVE NAs FROM OUTPUT CSV
+write.csv2(data, "french_output.csv")
+
+```
+
+```{r}
+
+library(dplyr)
+
+file = "japanese_mirrorinvariance-merged.csv"
+data = read.csv(file)
+
+
+#CREATE SEQUENCE ID
+list = list("")
+for (x in data$internal_node_id) {
+  split = strsplit(x, split = "-")
+  list <- append(list, split)
+}
+l2 = list("")
+for (x in list) {
+  last_item = tail(x, n=1)
+  l2 <- append(l2, last_item)
+}
+l2 = unlist(l2)
+l3 = list("")
+for (x in l2) {
+  num = as.double(x)
+  num = floor(num)
+  l3 <- append(l3, num)
+}
+l3 = unlist(l3)
+length = length(l3)
+l3 = l3[-1]
+l3 = l3[-1]
+l3 = l3[-1]
+data$sequence_id = l3
+
+#FIGURE OUT IF MIRROR OR NOT
+
+mirror = grepl("M", data$stimulus, ignore.case = FALSE,)
+normal = grepl(pattern = "/jap", data$stimulus) | grepl(pattern = "/french", data$stimulus) | grepl(pattern = "/tools", data$stimulus) | grepl(pattern = "/faces", data$stimulus) | grepl(pattern = "/false", data$stimulus)
+
+test = (data$sequence_id == "0" | data$sequence_id =="2") & (mirror == TRUE)
+test1 = (data$sequence_id == "0" | data$sequence_id =="2") & (normal == TRUE)
+
+mirror_true <- ifelse(test, "M", NA)
+normal_true <- ifelse(test1, "T", NA)
+
+
+length = length(data$sequence_id)
+stimulus_positions = grepl("Press S", data$stimulus, ignore.case = FALSE,)
+stimulus_positions = which(stimulus_positions == 'TRUE')
+
+same_mirror_normal <- rep(NA, length)
+for (stimulus_position in stimulus_positions) {
+  if (mirror[stimulus_position - 1] == TRUE | mirror[stimulus_position - 3] == TRUE) {
+    same_mirror_normal[stimulus_position] = "M"
+  } else {
+    same_mirror_normal[stimulus_position] = "T"
+  }
+}
+data['same_mirror_normal'] <- same_mirror_normal
+
+#MOVE COLUMNS
+
+data = select(data, workerid,proliferate.condition,X0,X1,failed_audio,failed_images,failed_video,internal_node_id,response,rt,sequence_id, same_mirror_normal, stimulus, success, time_elapsed, timeout, trial_index, trial_type, view_history, error)
+
+#EXPORT DATAFRAME AS CSV
+data <- replace(data, is.na(data), "") #REMOVE NAs FROM OUTPUT CSV
+write.csv2(data, "japanese_output.csv")
+
+```
+
+
+Data column names clean up:
+```{r}
+french_cleaningdata <- read.csv(file = "~/Desktop/french_output.csv")
+cleaneddata_french <- french_cleaningdata %>%
+  unite('samediff_mirrornorm', X0,same_mirror_normal, remove=FALSE) %>% #getcondition
+  rename(categories=X1) %>% #rename columns 
+  rename(samediff=X0) %>%
+  mutate(language= "french") #getgroup type
+cleaneddata_french 
+write_csv2(cleaneddata_french, "cleaneddata_french.csv")
+```
+
+```{r}
+#read output from above
+japanese_cleaningdata <- read.csv(file = "~/Desktop/japanese_output.csv")
+cleaneddata_japanese <- japanese_cleaningdata %>%
+  unite('samediff_mirrornorm', X0,same_mirror_normal, remove=FALSE) %>% #getcondition
+  rename(categories=X1) %>% #rename columns 
+  rename(samediff=X0) %>%
+  mutate(language= "japanese") #getgroup type
+cleaneddata_japanese
+write_csv2(cleaneddata_japanese, "cleaneddata_japanese.csv")
+```
+
+

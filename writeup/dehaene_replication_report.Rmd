@@ -12,7 +12,7 @@ output:
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
-## Introduction
+## Introduction/Background
 
 Mirror invariance, a visual mechanism that allows recognition of mirror images, is often present when children are learning to read and write. Dehaene et al. (2009) examined if mirror invariance was retained in adult readers, revealing that mirror invariance is only retained in recognition of images and not words.
 
@@ -20,28 +20,24 @@ This study will replicate Dehaene (2009)'s study. More information can be found 
 
 [Original paper](https://github.com/psych251/dehaene2009.git/)
 
-[Project Repository](https://github.com/psych251/dehaene2009/blob/f4b45d0253dfb33e33c2da31910f1ba1ca11c2b5/original_paper/dehaene2009.pdf/)
+[Project Repository on Github](https://github.com/psych251/dehaene2009/blob/f4b45d0253dfb33e33c2da31910f1ba1ca11c2b5/original_paper/dehaene2009.pdf/) includes code for the behavioral task (docs folder), raw output, and preprocessed data (data folder).
 
 [Updated Project Paradigm](https://psych251.github.io/dehaene2009/)
 
 [Collected Data](https://github.com/psych251/dehaene2009/tree/main/writeup)
 
+I plan to replicate the section of the study "Behavioral same-different judgments: extension to other visual categories" (Figure 7). I will create the task based on the authors' tasks as provided in the methods section of the paper. The task is comprise of identifying same or different pictures and words based on the participant's respective fluent language. I will not be conducting the rest of the study as they require acquisition of fMRI data which is not possible with the time and resouces provided for this project. 
 
 ### Justification of the Study
 
 I chose this study because it relates to visual word processing, a research interest of mine. I am particularly interested in how mirror invariance is mostly present in children and not adults and how that can inform development of word processing. Additionally, with my interest in bilingualism/multilingualism, I am interested in how native non-English speakers process words in their native languages. Finally, I am intrigued about how such language differences can inform acquisition of new words especially of a different language. 
 
-### Procedure and Challenges
-
-I plan to replicate the first part of the study which is the behavioral task conducted to examine mirror invariance specifically the "Behavioral same-different judgments: extension to other visual categories" section. I will create the task based on the authors' tasks as provided in the methods section of the paper. The task is comprise of identifying same or different words and pictures based on the participant's native language. I will not be conducting the rest of the study as they require acquisition of fMRI data which is not possible with the time and resouces provided for this project.
-
-Selecting the words and images for the study can be a challenge as certain word or image can have associations with an individual which can influence identification of same images.
 
 ## Methods
 
 ### Planned Sample
 
-There will be 26 total participants, 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
+Since effect size was not stated in the study, I could not perform a power analysis. There will be 26 total participants, 13 French and 13 Japanese speaking participants who are right-handed as followed in the study with mean age of 23.
 
 ### Materials
 
@@ -57,71 +53,132 @@ The following procedure will be followed precisely:
 
 "The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant's task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g. two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g. one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order." page 1846.
 
-### Analysis Plan
 
-The following analysis plan will be followed:
-
-Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. Data will be collected from 13 French and 13 Japanese speaking participants who are right-handed as followed in the study.
+### Exclusion Criterias
+Response times less than 100 ms and more than 2000 ms. To ensure participants are not pressing keys randomly or are paying attention to the task,response times less than 100 ms and more than 2000 ms will be excluded from analysis. Additionally, those who performed less than 80% accuracy for recognizing same/different images will be excluded to ensure participants are paying attention to the task.
 
 
 ### Differences from Original Study
 
 This replication study will follow the methods and analysis plan from the study as previously mentioned. Images and words in the original study are different from this replication study. The main difference is that the fMRI part of the study is not conducted; so in contrary to the original study, participants wont have any exposure to same-different task prior to this study.
 
+### Analysis Plan
+
+The following analysis plan will be followed from the study:
+Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts).
+
 ### Methods Addendum (Post Data Collection)
 
-You can comment this section out prior to final report with data collection.
-
 #### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+  SAfter the exclusion criterias, the actual sample size was n=23 (10 Japanese-speaking participants and 13 French-speaking participants). The mean age was 36.
 
 #### Differences from pre-data collection methods plan
- Data will be collected through prolific instead of lab setting. Additionally, images in the behavioral tasks were different from the previous study.
+ none
 
 ## Results
 In the pilot study, median correct response times did not vary accross categories (p=0.941).
 
 ### Data preparation
 
-Two sets of data: one for Japanese participants and another for French participants.
-For each group of participants, there will be 20 columns:
-ID and five categories where there will be: Normal Pair Same, Normal Pair Different, Mirror Same,and Mirror Different categories. 
-
-Data exclusion:
-- Response times less than 100 ms and more than 2000 ms. This is to ensure participants are not pressing keys randomly or are paying attention to the task.
-- Less than 80% accuracy for recognizing same/different images to ensure participants are paying attention to the task.
-
-Further data-cleaning from behavioral task was done prior to analysis. This was to derive mirror or same [Data-cleaning](https://github.com/psych251/dehaene2009.git/)
-	
-```{r include=F}
-###Data Preparation
-
-####Load Relevant Libraries and Functions
-
-####Import data
-
-#### Data exclusion / filtering
-
-#### Prepare data for analysis - create columns etc.
-```
+[Preprocessing of data] was completed prior to analysis to obtain necessary rows from the raw output data of the mirror invariance task. The preprocessing of data can also be found on [Github](https://github.com/psych251/dehaene2009.git/).
 
 ### Confirmatory analysis
+Analysis is as shown below:
 
-The analyses as specified in the analysis plan will was followed. Median correct response times will be analyzed using ANOVA to test group category effects of mirror invariance. I will focus on the category effect from the ANOVA test. 
+Load necessary libraries
 
-As stated, median correct response times did not vary accross categories (p=0.941).
+```{r}
+library(tidyr)
+library(dplyr)
+library(data.table)
+library(forcats)
+library(ggplot2)
+library(emmeans)
+```
+
+Open csv files and bind
+```{r}
+#bind data together
+japanese_output <- read.csv(file = "~/Desktop/cleaneddata_japanese.csv", sep = ";")
+french_output <-read.csv(file = "~/Desktop/cleaneddata_french.csv", sep = ";")
+data<- rbind(japanese_output,french_output)
+```
+
+Perform exclusion criterias and filter out worker id who did not meet criteria
+```{r}
+#exclude response times less than 200 ms and more than 2000 ms
+data_rt <- data %>%
+  subset( data$samediff_mirrornorm == "D_M" | data$samediff_mirrornorm == "D_T" | data$samediff_mirrornorm == "S_M" |data$samediff_mirrornorm == "S_T", remove= FALSE) %>% #exclude answer from instruction
+  subset( data$response == "d" | data$response == "s", remove=FALSE) %>% #getting row with responses
+  subset( rt>200 & rt<2000, remove=FALSE) #exclude response times
+
+#accuracy is 80%
+data_accurate <- data_rt %>%
+  mutate(is.correct= (samediff == "S" & response == "s") | (samediff == "D" & response == "d" )) %>% 
+  group_by(workerid) %>%
+  summarise(percentage = mean(is.correct))
+
+#filter worker id
+filtered_data <- data_rt %>%
+  left_join(data_accurate)
+
+#take more than 80% accurate
+final_data <- filtered_data %>%
+  filter(percentage>0.80)
+
+```
+
+Create new data set with correct mean response time
+```{r}
+median_rt = final_data%>% 
+  group_by(categories,workerid,samediff_mirrornorm,language) %>%
+  summarize(medianrt= median(rt, na.rm =FALSE))
+```
+
+Run key statistic; key effect of categories on median response time
+
+```{r}
+#cateogy effect
+anova_results <- aov(median_rt$medianrt ~ median_rt$categories)
+summary(anova_results)
+#'R','M','J','O','H'="Alphabetic", "False", "Japanese", "Tools","Faces" respectively
+
+#further analysis checking means between categories
+cat_lm <- lm(medianrt ~ categories, data=median_rt)
+anova(cat_lm)
+emmeans(cat_lm, pairwise ~ categories, detailed= TRUE)
+```
+After running an ANOVA test, category effect on mean correct response times was significant (p=0.04708) which is consistent with the original study. I also ran additional test to compare means of categories between each other, however I did not observe significant results which is inconsistent with the origincal study.
 
 ![Original figure from the study](/Users/cherrysseulsa/Desktop/image_proj.png )
-![Figure from pilot data](/Users/cherrysseulsa/Desktop/pilotimage.png )
+
+Replicated figure 7:
+```{r}
+level_order <- c('R','M','J','O','H')
+median_rt %>%
+  group_by(categories,language, samediff_mirrornorm) %>%
+  summarize(mean_medianrt=mean(medianrt),
+            ci=1.96*sd(medianrt)/sqrt(n())) %>% 
+  mutate(samediff_mirrornorm=fct_relevel(samediff_mirrornorm,  "S_T", "D_T","S_M", "D_M")) %>% 
+  
+  ggplot(aes(x=categories, y=mean_medianrt, fill= samediff_mirrornorm, bins=10)) + 
+  geom_bar(stat = 'identity', position = "dodge", width=1.00, color="black")+
+  scale_x_discrete(limits=level_order)+
+  geom_errorbar(aes(x=categories, ymin=mean_medianrt, ymax=mean_medianrt+ci), width=0.2, position = position_dodge(0.9))+
+  
+  scale_x_discrete(name= "Categories",labels=c("Alphabetic", "False", "Japanese", "Tools","Faces"))+
+  scale_fill_manual(name="Condition",values=c("S_T"="blue4","D_T"="mediumpurple1", "S_M"="firebrick3", "D_M"="lightgoldenrod1"), labels=c("Normal Same","Normal Different", "Mirror Same", "Mirror Different"))+
+  labs(y="Response Time(ms)") +
+  facet_wrap(~language)+
+  theme_classic()
+```
+The replicated graph includes upper confidence interval since the study did not specify how error bars in Figure 7 was obtained.
 
 ## Discussion
 
 ### Summary of Replication Attempt
+In summary, the category effect on median correct response times was replicated in this study (p=0.047). However, there was no significance detected between means of categories. The category affected the median correct time, but there was no difference between categories. As opposed to the study, this replication study can't conclude if mirror invariance vanishes in scripts and not in images or faces. 
 
-In the pilot of two French-speaking participants, the result was not replicated as median response times did not vary significantly accross categories. 
-
-```{r include=F}
-
-### Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
-```
+### Commentary 
+Although the replication showed a category effect, it should be reiterated that the task was not identical to the original study -- images and words used differed from the study. I would be curious what the replication results would be if the images were identical. Furthermore, the original study comprised of parts wherein participants performed similar task as shown in figures 2 and 3 in the article. I am curious if images were presented previously to participants in those studies which could have affected their performance in the part of the study I replicated. A challenge replicating this study was deciding what images and words to include in the task designed -- certain images or words could have affected a person's performance (ie. personal association to certain words or images). Finally, the paper did not include exclusion criterias and details for visualizing results such as description of error bars.
 
